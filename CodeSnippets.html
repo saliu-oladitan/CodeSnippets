@@ -14,3 +14,19 @@
 
 <!-- 2. Remove input field border and border-color-->
 <input type="text" style="border:none; border-color:transparent; font-size:initial">
+
+<!-- 3. View (Union)-->
+
+CREATE VIEW [ViewName]
+AS
+
+SELECT Col1, Col2,Col3
+FROM Table1
+
+UNION SELECT Col1, Col2,Col3
+FROM Table2
+
+UNION SELECT Col1, Col2,Col3
+FROM Table3
+
+GO
