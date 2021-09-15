@@ -1,4 +1,19 @@
 
+<!-- 8. Writing a keyless model (a model without a primary key)-->
+namespace RSSBillingSystem.Models
+{
+    [Keyless]
+    public class LatestBillings
+    {
+        public string MonthYear { get; set; }
+
+        public decimal TheAmount { get; set; }
+
+        public string TheProduct { get; set; }
+
+    }
+}
+
 <!-- 7. Using indexOf in JavaScript-->
 
 <p id="demo"></p>
