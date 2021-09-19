@@ -1,3 +1,21 @@
+<!-- 12. Handling specific and general errors---->
+try
+                {
+                    newStudent.Name = Util.Console.Ask("Name:");
+                    newStudent.Grade = Util.Console.AskInt("Age:");
+                    newStudent.Phone = Util.Console.AskInt("Grade:");
+                }
+
+                catch (FormatException)
+                {
+                    Console.WriteLine("Wrong data format");
+                }
+                
+                catch (Exception)
+                {
+                    Console.WriteLine("Error.");
+                }
+
 
 <!-- 11. It shows on nouse on top-->
  <input type="text" id="UserName" title="User Name">
