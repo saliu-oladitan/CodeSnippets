@@ -1,3 +1,15 @@
+<!-- 17. ADO.Net Dataset Format---->        
+public DataSet GetDDSCustomerAddress(string CustomerName)
+        {
+            SqlCommand com = new SqlCommand("GetDDSCustomerAddress", con);
+            com.CommandType = CommandType.StoredProcedure;
+            com.Parameters.AddWithValue("@CustomerName", CustomerName);
+            SqlDataAdapter da = new SqlDataAdapter(com);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            return ds;
+        }
+
 <!-- 16. Do-While Loop (Executes at least once)---->
 int i = 1;
            do
