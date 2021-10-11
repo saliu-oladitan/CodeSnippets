@@ -78,6 +78,11 @@ GO
 <script type="text/JavaScript">
     $(function () {
         $("#SelectId").change(function () {
+          if ($("#SelectId").val()==""){
+          }
+          else{
+          
+          }
             $.getJSON("/ControllerName/ActionName", { CustomerName: $("#SelectId").val() }, function (d) {
                 var row = "";
                 $("#DDSCustAccount").empty();
@@ -86,6 +91,7 @@ GO
                 });
                 $("#DDSCustAccount").html(row);
             })
+        }
         })
     })
 
