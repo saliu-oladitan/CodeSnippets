@@ -97,6 +97,7 @@ GO
             DataSet de = dbop.DataSetFunctionName();   //For the select field
 
             List<SelectListItem> list1 = new List<SelectListItem>();
+                list1.Add(new SelectListItem { Text = "Select a value", Value = "" });   //Insert an empty option
 
             foreach (DataRow dr in de.Tables[0].Rows)
             {
