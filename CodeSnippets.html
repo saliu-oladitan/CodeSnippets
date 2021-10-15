@@ -10,6 +10,7 @@ insert into yourTableName
 SELECT col1, col2   FROM [servername-or-the-url].database.dbo.TableName
 
             
+Note: The servers must be linked. Configure (Linked Server)
 
 <!---23---Copy data from one table to another table in another server in SQL SERVER>
 create your table on the target server using your scripts from the Script Table As / Create Script step
@@ -20,6 +21,7 @@ INSERT INTO dbo.YourTableNameHere
    SELECT *
    FROM [SourceServer].[SourceDatabase].dbo.YourTableNameHere
 
+Note: The servers must be linked. Configure (Linked Server)
 <!---22----String Interpolation Usage---------->
 Console.WriteLine($"This is the new number {x}");
 
