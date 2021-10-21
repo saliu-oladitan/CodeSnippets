@@ -1,3 +1,13 @@
+<!---26---Check if a query was successfully executed in SQL SERVER.----------->
+IF @@ERROR <> 0 
+    BEGIN
+        RETURN 1;
+    END
+ELSE
+    BEGIN            
+        RETURN 2;
+    END;
+GO
 
 <!---25---Getting the number of the affected rows after running a query in sql server.----------->
 ---Put the code below and the end of the query you want to run----
