@@ -4,6 +4,8 @@ FROM Students
 GROUP BY State
 HAVING COUNT(StudentID) > 8;
 
+Note: The HAVING clause was added to SQL because the WHERE keyword cannot be used with aggregate functions.
+
 
 <!---27---Value and Reference Type.----------->
 int number;  //number will be 0. It was initiated without passing a value to it. int is a value type
