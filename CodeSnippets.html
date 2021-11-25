@@ -1,3 +1,12 @@
+<!---34---Union of two tables with different columns----------->
+Note: Table 1 has: col1, col2 and col3
+      Table 2 has: col4, col5 and col6
+      Combined Table/View:  col1, col2, col3, col4, col5, col6
+
+Select col1, col2, col3, Null as col4, Null as col5, Null as col6 from history_pod_transfer
+Union
+Select Null as col1, Null as col2, Null as col3, AWBNO, SCAN_STATUS,ORIGIN from SCANS
+
 <!---33---Getting this error for Asp.Net Core Web App----------->
 Error: unable to connect to web server IIS
 Solution: Close the Visual Studio and start it again. Then, run the App.
@@ -400,20 +409,4 @@ GO
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html> 
-
-
-
-
-
-<!-- 2. SUBMIT CURRENT DATE AND TIME-->
- uc.RegTime = DateTime.Now;
-
-<!-- 1. OPEN A LINK IN A NEW TAB-->
-<a href="****" target="_blank">CLICK HERE</a>
+    <meta name="viewport" content="width=device-width,
