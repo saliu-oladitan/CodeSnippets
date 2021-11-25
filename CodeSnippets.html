@@ -5,7 +5,9 @@ Note: Table 1 has: col1, col2 and col3
 
 Select col1, col2, col3, Null as col4, Null as col5, Null as col6 from history_pod_transfer
 Union
-Select Null as col1, Null as col2, Null as col3, AWBNO, SCAN_STATUS,ORIGIN from SCANS
+Select Null as col1, Null as col2, Null as col3, col4, col5,col6 from SCANS
+
+
 
 <!---33---Getting this error for Asp.Net Core Web App----------->
 Error: unable to connect to web server IIS
