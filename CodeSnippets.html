@@ -1,3 +1,8 @@
+<!---41---Display a specific number of items from a table in a list----------->
+return View(_db.HistorypodScans.OrderByDescending(x => x.Srn).Take(10).ToList());
+return View(_db.HistorypodScans.Take(10).ToList());
+
+
 <!---40---Add the runtime compilation functionality after starting a project without choosing the Runtime Compilation----------->
 INSTALL NUGET PACKAGE
 Microsoft.ASPNETCore.MVC.Razor.RuntimeCompilation
