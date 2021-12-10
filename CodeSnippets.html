@@ -1,3 +1,45 @@
+<!---42---Search Multiple Words----------->
+
+[HttpGet]
+        public async Task<IActionResult> Index(string StaffSearch)
+        {
+            if (StaffSearch == null)
+            {
+                var displaydata = _db.HistorypodScans.Take(0).ToList();
+                return View(displaydata);
+            }
+
+
+            ViewData["Getstaffdetails"] = StaffSearch;
+
+           
+
+            
+
+            if (!String.IsNullOrEmpty(StaffSearch))
+            {
+                string[] SplitValue = StaffSearch.Split(",");
+
+                List<HistorypodScans> query = new List<HistorypodScans>();
+
+                foreach (var word in SplitValue)
+                {
+                   var staffquery = _db.HistorypodScans.Where(x => x.Waybillnumber.Contains(word) || x.AWBNO.Contains(word)).ToList();
+                   query.AddRange(staffquery);
+
+                }
+                return View(query);
+            }
+
+
+            else
+                        {
+                            var displaydata = _db.HistorypodScans.Take(0).ToList();
+                            return View(displaydata);
+                        }
+
+
+
 <!---41---Display a specific number of items from a table in a list----------->
 return View(_db.HistorypodScans.OrderByDescending(x => x.Srn).Take(10).ToList());
 return View(_db.HistorypodScans.Take(10).ToList());
