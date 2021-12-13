@@ -18,7 +18,9 @@ WHERE ContactName LIKE 'a%o'	Finds any values that start with "a" and ends with 
 
 <!---42---Search Multiple Words----------->
 
-[HttpGet]
+
+
+        [HttpGet]
         public async Task<IActionResult> Index(string StaffSearch)
         {
             if (StaffSearch == null)
@@ -42,10 +44,10 @@ WHERE ContactName LIKE 'a%o'	Finds any values that start with "a" and ends with 
 
                 foreach (var word in SplitValue)
                 {
-                   var staffquery = _db.HistorypodScans.Where(x => x.Waybillnumber.Contains(word) || x.AWBNO.Contains(word)).ToList();
-                   query.AddRange(staffquery);
-
+                    var staffquery = _db.HistorypodScans.Where(x => x.Waybillnumber.Equals(word) || x.AWBNO.Equals(word)).ToList();
+                    query.AddRange(staffquery);
                 }
+
                 return View(query);
             }
 
@@ -55,6 +57,8 @@ WHERE ContactName LIKE 'a%o'	Finds any values that start with "a" and ends with 
                             var displaydata = _db.HistorypodScans.Take(0).ToList();
                             return View(displaydata);
                         }
+
+        }
 
 
 
