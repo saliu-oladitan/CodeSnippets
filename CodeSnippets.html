@@ -1,3 +1,40 @@
+
+<!---46--- CHECH IF AN ARRAY CONTAINS DUPLICATES -----------> 
+
+<script>
+const numbers = [1, 2, 3, 5, 6];
+
+let isDuplicate = false;
+
+// Outer for loop
+for (let i = 0; i < numbers.length; i++) {
+    // Inner for loop
+    for (let j = 0; j < numbers.length; j++) {
+        // Skip self comparison
+        if (i !== j) {
+            // Check for duplicate
+            if (numbers[i] === numbers[j]) {
+                isDuplicate = true;
+                // Terminate inner loop
+                break;
+            }
+        }
+        // Terminate outer loop
+        if (isDuplicate) {
+            break;
+        }
+    }
+}
+
+if (!isDuplicate) {
+    alert(`Array doesn't contain duplicates.`);
+} else {
+   alert(`Array contains duplicates.`);
+}
+// Output: Array contains duplicates.
+
+</script>
+
 <!---45---MULTIPLE ORDERING OF A LIST TABLE IN CONTROLLER -----------> 
 return View(query.OrderByDescending(x => x.AWBNO).ThenByDescending(x => x.DATE).ToList());
 
