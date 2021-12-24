@@ -1,3 +1,28 @@
+
+<!---49--- How to use Distinct<TSource>(IEnumerable<TSource>) to return distinct elements from a sequence of integers-----------> 
+The following code example demonstrates how to use Distinct<TSource>(IEnumerable<TSource>) to return distinct elements from a sequence of integers.
+List<int> ages = new List<int> { 21, 46, 46, 55, 17, 21, 55, 55 };
+
+IEnumerable<int> distinctAges = ages.Distinct();
+
+Console.WriteLine("Distinct ages:");
+
+foreach (int age in distinctAges)
+{
+    Console.WriteLine(age);
+}
+
+/*
+ This code produces the following output:
+
+ Distinct ages:
+ 21
+ 46
+ 55
+ 17
+*/
+    Source: https://docs.microsoft.com/en-us/dotnet/api/system.linq.enumerable.distinct?redirectedfrom=MSDN&view=net-6.0#System_Linq_Enumerable_Distinct__1_System_Collections_Generic_IEnumerable___0__
+
 <!---48--- SPlit by enter -----------> 
 string[] SplitValue = StaffSearch.Split("\r\n");
 
