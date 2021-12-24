@@ -1,3 +1,105 @@
+<!---50--     ----->
+
+@{ string compareX = "1234"; }
+           
+
+            @if (Model.Count() > 0)
+            {
+                @*@foreach (var item in Model)
+            { var AllAwbs = AllAwbs + @item.AWBNO}*@
+
+                <br /><br /><br /><br />
+                <h3><b> Shipment Details</b> <br /></h3>
+                <table class="table table-striped">
+                    @foreach (var item in Model)
+                    {
+
+
+                        @if (@item.AWBNO == null)
+                        {
+
+                        }
+                        else
+                        {
+
+                            @*@foreach (var awbpresent in Model)
+                        {
+
+                            @if (the current awb is part of the distinct awbs)
+                        {
+
+                        }
+                                }*@
+
+
+                            @if (@item.AWBNO != compareX)
+                            {
+                                compareX = @item.AWBNO;
+
+                                <thead>
+
+                                    <tr style="color:white; background-color:red">
+
+                                        <th>
+                                            <div> @Html.DisplayNameFor(model => model.AWBNO) </div>
+                                        </th>
+                                        <th>
+                                            <div> @Html.DisplayNameFor(model => model.SCAN_STATUS) </div>
+                                        </th>
+                                        <th>
+                                            <div> @Html.DisplayNameFor(model => model.DATE)</div>
+                                        </th>
+                                        <th>
+                                            <div> @Html.DisplayNameFor(model => model.ScanStation) </div>
+                                        </th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                            }
+
+
+
+
+
+
+
+
+
+
+                            <tbody>
+
+                                <tr>
+
+                                    <td>
+                                        <div> @Html.DisplayFor(modelItem => item.AWBNO) </div>
+                                    </td>
+                                    <td>
+                                        <div> @Html.DisplayFor(modelItem => item.SCAN_STATUS) </div>
+                                    </td>
+                                    <td>
+                                        <div> @Html.DisplayFor(modelItem => item.DATE) </div>
+                                    </td>
+                                    <td>
+                                        <div> @Html.DisplayFor(modelItem => item.ScanStation) </div>
+                                    </td>
+                                    @*<td>
+                                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                                </td>*@
+                                </tr>
+
+                            </tbody>
+
+                        }}
+                </table>
+            }
+
+        </div>
+    </div>
+
+
+
 
 <!---49--- How to use Distinct<TSource>(IEnumerable<TSource>) to return distinct elements from a sequence of integers-----------> 
 The following code example demonstrates how to use Distinct<TSource>(IEnumerable<TSource>) to return distinct elements from a sequence of integers.
