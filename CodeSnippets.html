@@ -1,16 +1,14 @@
-<!---51-- Write C# code in a .cshtml file    ----->
+<!---51-- Write C# code in a .cshtml file----->
 E.g. @{ string compareX = "1234"; }
            
 
-<!---50--     ----->
+<!---50--Showing multiple header rows on a table and controlling when it is being shown----->
 
 @{ string compareX = "1234"; }
            
 
             @if (Model.Count() > 0)
             {
-                @*@foreach (var item in Model)
-            { var AllAwbs = AllAwbs + @item.AWBNO}*@
 
                 <br /><br /><br /><br />
                 <h3><b> Shipment Details</b> <br /></h3>
@@ -19,42 +17,32 @@ E.g. @{ string compareX = "1234"; }
                     {
 
 
-                        @if (@item.AWBNO == null)
+                        @if (@item.A == null)
                         {
 
                         }
                         else
                         {
 
-                            @*@foreach (var awbpresent in Model)
-                        {
-
-                            @if (the current awb is part of the distinct awbs)
-                        {
-
-                        }
-                                }*@
-
-
                             @if (@item.AWBNO != compareX)
                             {
-                                compareX = @item.AWBNO;
+                                compareX = @item.A;
 
                                 <thead>
 
                                     <tr style="color:white; background-color:red">
 
                                         <th>
-                                            <div> @Html.DisplayNameFor(model => model.AWBNO) </div>
+                                            <div> @Html.DisplayNameFor(model => model.A) </div>
                                         </th>
                                         <th>
-                                            <div> @Html.DisplayNameFor(model => model.SCAN_STATUS) </div>
+                                            <div> @Html.DisplayNameFor(model => model.B) </div>
                                         </th>
                                         <th>
-                                            <div> @Html.DisplayNameFor(model => model.DATE)</div>
+                                            <div> @Html.DisplayNameFor(model => model.C)</div>
                                         </th>
                                         <th>
-                                            <div> @Html.DisplayNameFor(model => model.ScanStation) </div>
+                                            <div> @Html.DisplayNameFor(model => model.D) </div>
                                         </th>
                                         <th></th>
                                     </tr>
@@ -62,35 +50,22 @@ E.g. @{ string compareX = "1234"; }
                             }
 
 
-
-
-
-
-
-
-
-
                             <tbody>
 
                                 <tr>
 
                                     <td>
-                                        <div> @Html.DisplayFor(modelItem => item.AWBNO) </div>
+                                        <div> @Html.DisplayFor(modelItem => item.A) </div>
                                     </td>
                                     <td>
-                                        <div> @Html.DisplayFor(modelItem => item.SCAN_STATUS) </div>
+                                        <div> @Html.DisplayFor(modelItem => item.B) </div>
                                     </td>
                                     <td>
-                                        <div> @Html.DisplayFor(modelItem => item.DATE) </div>
+                                        <div> @Html.DisplayFor(modelItem => item.C) </div>
                                     </td>
                                     <td>
-                                        <div> @Html.DisplayFor(modelItem => item.ScanStation) </div>
+                                        <div> @Html.DisplayFor(modelItem => item.D) </div>
                                     </td>
-                                    @*<td>
-                                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-                                </td>*@
                                 </tr>
 
                             </tbody>
