@@ -1,3 +1,37 @@
+
+<!---52-- Detect duplicate values C#----->
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace CodeTest
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+                 int compareX = 1234;
+             List<int> ages = new List<int> { 21, 21, 21, 46, 46, 46, 55, 55, 55 };
+
+            foreach (int agess in ages)
+            {
+                
+               
+                if(agess != compareX)
+                {
+                    compareX = agess;
+                    Console.WriteLine("Distict Age detected");
+                }
+
+            }
+
+        }
+    }
+}
+
+
+
 <!---51-- Write C# code in a .cshtml file----->
 E.g. @{ string compareX = "1234"; }
            
