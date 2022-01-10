@@ -1,3 +1,20 @@
+<!---54-- "\r\n----->
+
+- \n means new line. It means that the cursor must go to the next line.
+
+\r means carriage return. It means that the cursor should go back to the beginning of the line.
+
+Different Operating Systems handle newlines in a different way. Here is a short list of the most common ones: 
+
+DOS and Windows : They expect a newline to be the combination of two characters, namely '\r\n' (or 13 followed by 10).
+
+Unix (and hence Linux as well) : uses a single '\n' to indicate a new line.
+
+Macs: use a single '\r'.
+
+So this causes problems when u port your app from windows to mac when u're using folder path's and alike.
+
+
 <!---53-- LINQ queries sample in C# for SQL Server databases----->
  
 static void Main()
