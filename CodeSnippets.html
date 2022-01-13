@@ -46,6 +46,60 @@ B. *****
                 //app.UseHsts();
             }  
 
+C. *****                
+ SharedFolder
+ a. @{
+    ViewData["Title"] = "NotFound";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+<br /><br /><br /><br /><br />
+<h1>@ViewBag.ErrorMessage</h1>
+<br />
+<a asp-action="index" asp-controller="UserRegistration">Go back to the home page</a>
+
+b. @{ 
+    Layout = "_Layout1";
+
+}
+
+<h3>An error occured while processing your request. <br />THe support team is notified and we are working to fix it.</h3> <br />
+<h5>Please contact us email@company.com</h5>
+<hr />
+
+<h5>Hide the following information because the users do not need it and they should not be given the technical details of the error for security purpose.</h5><br />
+<h3>Exception Details:</h3>
+<div class="alert alert-danger">
+    <h5>Exception Path</h5>
+    <hr />
+    <p>@ViewBag.ExceptionPath</p>
+</div>
+
+<div class="alert alert-danger">
+    <h5>Exception Message</h5>
+    <hr />
+    <p>@ViewBag.ExceptionMessage</p>
+</div>
+
+<div class="alert alert-danger">
+    <h5>Exception Stack Trace</h5>
+    <hr />
+    <p>@ViewBag.ExceptionStackTrace</p>
+</div>
+
+c. Free Style (It's your customised error page)
+@model ErrorViewModel
+@{
+    ViewData["Title"] = "Error";
+}
+
+
+<p align="center"><img src="~/images/rse.png" width="100px" height="50px"></p>
+<br>
+<p align="center"><img src="~/images/error.png" width="450px height="450px"></p>
+...              
+                
+                
+                
 <!---55-- Traditional webiste or SPA----->
 
 Use traditional web applications when:
