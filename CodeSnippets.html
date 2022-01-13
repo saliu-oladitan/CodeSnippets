@@ -17,6 +17,10 @@ Locally: handling it from where it happens.
 Centralised: handling it from the startup.cs file (configure - route pipeline).
 Use app.UseExceptionHandler("/Error") to handle web page action error in a centralised way.)
 
+NOTE: It is good to handle the errors in a centralised way ALWAYS even if you handle some errors locally.
+This is because, if an error is not handled locally, it will use the centralised error handling procedure.
+This makes your application to leave no error unhandled.
+
 
 A. *****
 public class ErrorController : Controller
