@@ -4,8 +4,8 @@ Type 1: Users' Surfing errors (when moving from one url to the other) (Null Refe
 Type 2: Web page action errors (when a user performs a wrong action on the web page) (Exception)
 
 Type 1: Users' Surfing errors (when moving from one url to the other) (Status Code)
-          -1- Resource with the specified ID does not exist (HTTP ERROR)
-          -2- The URL does not match any route (Null Reference Exception)
+          -1- Resource with the specified ID does not exist (Null Reference Exception)
+          -2- The URL does not match any route (HTTP ERROR)
 (You can handle the two sub types locally or in a centralised way.
 Locally: handling it from where it happens, mostly in a controller action.
 Centralised: handling it from the startup.cs file (configure - route pipeline).
