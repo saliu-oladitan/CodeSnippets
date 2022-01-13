@@ -76,7 +76,34 @@ B. *****
                 //app.UseHsts();
             }  
 
-C. *****                
+C. ***** (A sample of local exception handling)
+         public async Task<IActionResult> Details(int? id)
+        {
+            // throw new Exception("Error in Details View");
+            // Note that any value that is not an interger will be considered as null
+            if (id == null)
+            {
+                return RedirectToAction("Index");
+               
+            }
+
+            //Let's us handle the exception in the details action locally
+            //If we don't handle it locally, it will use the centralised procedure
+            var getthisstaffdetails = await _auc.StaffCugNin.FindAsync(id);
+            if (getthisstaffdetails == null)
+            {
+                Response.StatusCode = 404;
+                ViewBag.Id = id;
+                return View("StaffNotFound");
+            }
+
+
+
+            var getreportdetails = await _auc.StaffCugNin.FindAsync(id);
+            return View(getreportdetails);
+        }         
+             
+D. *****                
  SharedFolder
  a. @{
     ViewData["Title"] = "NotFound";
