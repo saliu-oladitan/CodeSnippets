@@ -128,7 +128,21 @@ c. Free Style (It's your customised error page)
 <p align="center"><img src="~/images/error.png" width="450px height="450px"></p>
 ...              
                 
-                
+ d. Inside the corresponding controller view
+ @{
+    ViewData["Title"] = "404 Error";
+    Layout = "_Layout1";
+}
+
+<div class="alert alert-danger mt-1 mb-1">
+    <h4>404 Not Found Error :</h4>
+    <hr />
+    <h5>
+        Staff with Id = @ViewBag.Id cannot be found.
+    </h5>
+</div>
+<a asp-action="index" asp-controller="UserRegistration" class="btn btn-outline-success" style="width:auto">Click here to see the list of all staff</a>
+
                 
 <!---55-- Traditional webiste or SPA----->
 
