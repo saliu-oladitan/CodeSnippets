@@ -1,15 +1,17 @@
 <!---56-- Handling Http status code and exceptions-----> 
  Errors can occur on a webiste from users in two broad ways:
-Type 1: Suffing errors (when moving from one url to the other)
+Type 1: Suffing errors (when moving from one url to the other) (Status Code)
           -1- Resource with the specified ID does not exist
           -2- The URL does not match any route
 (You can handle the two sub types locally or in a centralised way. 
 You can handle any of the two sub types of the suffing errors using one default/custom page
 and you can have different pages for them if you like. Having different pages for them 
-might enable you to present detailed information/guidelines to the user.)
+might enable you to present detailed information/guidelines to the user.
+Use app.UseStatusCodePagesWithReExecute("/Error/{0}") to handle suffing error in a centralised way.)
 
-Type 2: Web page action error (when a user performs a wrong action on the web page)
-(You can also handle this type of error locally or in a centralised way.)
+Type 2: Web page action error (when a user performs a wrong action on the web page) (Exception)
+(You can also handle this type of error locally or in a centralised way.
+Use app.UseExceptionHandler("/Error") to handle web page action error in a centralised way.)
 
 
 A. *****
