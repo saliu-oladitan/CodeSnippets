@@ -8,7 +8,7 @@ Type 1: Users' Surfing errors (when moving from one url to the other) (Status Co
           -2- The URL does not match any route (HTTP ERROR)
 (You can handle the two sub types locally or in a centralised way.
 Locally: handling it from where it happens, mostly in a controller action.
-Centralised: handling it from the startup.cs file (configure - route pipeline).
+Centralised: handling it from the startup.cs file (configure - route pipeline). 
 You can handle any of the two sub types of the surfing errors using one default/custom page
 and you can have different pages for them if you like. Having different pages for them 
 might enable you to present detailed information/guidelines to the user.
@@ -22,10 +22,12 @@ Centralised: handling it from the startup.cs file (configure - route pipeline).
 Use app.UseExceptionHandler("/Error") to handle web page action errors in a centralised way.)
 
 NOTE: 
-A. It is good to handle the errors in a centralised way ALWAYS even if you handle some errors locally.
+A. Add the centralised error handling view to the shared folder. 
+And the local esception handling view to the corresponding controller view.
+B. It is good to handle the errors in a centralised way ALWAYS even if you handle some errors locally.
 This is because, if an error is not handled locally, it will use the centralised error handling procedure.
 This makes your application to leave no error unhandled.
-B. Always handle empty string and null value also.
+C. Always handle empty string and null value also.
 
 A. *****
 public class ErrorController : Controller
