@@ -1,3 +1,51 @@
+<!---56-- Handling Http status code and exceptions-----> 
+A. *****
+public class ErrorController : Controller
+    {
+        [Route("Error/{StatusCode}")]
+        public IActionResult HttpStatusCodeHandler(int StatusCode)
+        {
+            switch (StatusCode)
+            {
+                case 404:
+                    ViewBag.ErrorMessage = "Sorry, resource not available.";   //The importance of the ViewBag is to be able to display different messages on the same page depending on the the code error 
+                    break;
+            }
+            return View("NotFound");
+        }
+
+        [Route("Error")]
+        [AllowAnonymous]
+        public IActionResult Error()
+        {
+            var exceptionDetails = HttpContext.Features.Get<IExceptionHandlerPathFeature>();
+
+            ViewBag.ExceptionPath = exceptionDetails.Path;
+            ViewBag.ExceptionMessage = exceptionDetails.Error.Message;
+            ViewBag.ExceptionStackTrace = exceptionDetails.Error.StackTrace;
+
+            return View("ExceptionError");
+        }
+    }
+
+             
+B. *****
+ if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+            else
+            {
+                app.UseStatusCodePagesWithReExecute("/Error/{0}");
+                //app.UseStatusCodePagesWithRedirects("/Error/{0}");
+                //app.UseStatusCodePages();
+
+                app.UseExceptionHandler("/Error"); 
+                //app.UseExceptionHandler("/Home/Error"); //You can also call the one in shared folder like this.
+                //// The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+                //app.UseHsts();
+            }  
+
 <!---55-- Traditional webiste or SPA----->
 
 Use traditional web applications when:
