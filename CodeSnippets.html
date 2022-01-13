@@ -1,7 +1,7 @@
-<!---56-- Handling Http status code and exceptions-----> 
+<!---56-- Handling Users' Surfing errors and Web page action errors-----> 
  Errors can occur on a webiste from users in two broad ways:
 Type 1: Users' Surfing errors (when moving from one url to the other) (Null Reference Exception and HTTP ERROR)
-Type 2: Web page action error (when a user performs a wrong action on the web page) (Exception)
+Type 2: Web page action errors (when a user performs a wrong action on the web page) (Exception)
 
 Type 1: Users' Surfing errors (when moving from one url to the other) (Status Code)
           -1- Resource with the specified ID does not exist (HTTP ERROR)
@@ -14,7 +14,7 @@ and you can have different pages for them if you like. Having different pages fo
 might enable you to present detailed information/guidelines to the user.
 Use app.UseStatusCodePagesWithReExecute("/Error/{0}") to handle surfing errors in a centralised way.)
 
-Type 2: Web page action error (when a user performs a wrong action on the web page) (Exception)
+Type 2: Web page action error (when a user performs a wrong action on the web page)
 (You can also handle this type of error locally or in a centralised way.
 Locally: handling it from where it happens. E.g. in a controller action method if it is caught on a server
 in a controller or on the client-side if the web page has some necessary client-side scripting code running.
