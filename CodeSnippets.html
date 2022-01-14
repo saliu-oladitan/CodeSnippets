@@ -1,3 +1,44 @@
+<!---63---InProcess and OutOfProcess hosting models--->
+A. InProcess and OutOfProcess hosting
+hen it comes to deployment to IIS, ASP.NET Core offers two hosting models namely InProcess and OutOfProcess. 
+When you deploy your web application to IIS, various requests to the application are handled by what is known as ASP.NET Core Module. 
+Under default settings the hosting model for your application is InProcess. This means ASP.NET Core Module forwards the requests to 
+IIS HTTP Server (IISHttpServer). The IIS HTTP Server is a server that runs in-process with IIS. This results in great performance as 
+compared to Out Of Process model. In-process models bypasses built-in Kestrel web server of ASP.NET Core.
+
+If you decide to use Out-Of-Process hosting model then IIS HTTP Server won't be used. Instead Kestrel web server is used to process your requests. 
+So, ASP.NET Core Module forwards your requests to Kestrel web server. This communication is out-of-process communication and is therefore slower 
+than the in-process model.
+
+B. Specify InProcess or OutOfProcess
+Since ASP.NET Core 3.0, in-process hosting has been enabled by default for all app deployed to IIS.
+To explicitly configure an app for in-process hosting, set the value of the <AspNetCoreHostingModel> property to InProcess in the project file (.csproj):
+ <PropertyGroup>
+  <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>  
+</PropertyGroup>
+ 
+ <PropertyGroup>
+  <AspNetCoreHostingModel>OutOfProcess</AspNetCoreHostingModel>
+</PropertyGroup>
+ 
+ Also, when an Asp.net core project has been launched, you can 
+ go to the web.config and change it there.
+ 
+ C. To know the server running on a website. Note that for Asp.net core 
+ projects launched to the IIS, it will be either IIS HTTP Server (InProcess) or Kestrel web server (OutOfProcess).
+
+ Source and more readings: http://www.binaryintellect.net/articles/bb086279-ed2a-4628-85f2-7e91125fbe57.aspx#:~:text=The%20IIS%20HTTP%20Server%20is,to%20Out%20Of%20Process%20model.&text=If%20you%20decide%20to%20use,used%20to%20process%20your%20requests.
+ and out-of-process: https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/iis/out-of-process-hosting?view=aspnetcore-6.0
+    in-process: https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/iis/in-process-hosting?view=aspnetcore-6.0
+ 
+ 
+ ***To view the request or response HTTP headers in e.g. Google Chrome, take the following steps:
+
+1. In Chrome, visit a URL, right click, select Inspect to open the developer tools.
+2. Select Network tab.
+3. Reload the page, select any HTTP request on the left panel, and the HTTP headers will be displayed on the right panel.
+ (https://mkyong.com/computer-tips/how-to-view-http-headers-in-google-chrome/)
+ 
 <!---62--Specify the type of error log to display in the output window--->
 Tools >>> Options >>> Debugging >>> Output Window >>>ON/OFF as appropriate
 
