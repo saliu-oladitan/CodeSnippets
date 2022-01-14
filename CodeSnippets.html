@@ -1,3 +1,37 @@
+<!---64---[Remote] attribute--->
+
+[Remote] attribute is in the Microsoft.AspNetCore.Mvc namespace.
+The [Remote] attribute implements client-side validation that requires calling a method on the server to determine whether field input is valid. For example, the app may need to verify whether a user name is already in use.
+
+To implement remote validation:
+
+1. Create an action method for JavaScript to call. The jQuery Validation remote method expects a JSON response:
+
+true means the input data is valid.
+false, undefined, or null means the input is invalid. Display the default error message.
+Any other string means the input is invalid. Display the string as a custom error message.
+
+CONTROLLER
+[AcceptVerbs("GET", "POST")]
+public IActionResult VerifyEmail(string email)
+{
+    if (!_userService.VerifyEmail(email))
+    {
+        return Json($"Email {email} is already in use.");
+    }
+
+    return Json(true);
+}
+
+2. In the model class, annotate the property with a [Remote] attribute that points to the validation action method, as shown in the following example:
+[Remote(action: "VerifyEmail", controller: "Users")]
+public string Email { get; set; }
+
+
+
+
+
+
 <!---63---InProcess and OutOfProcess hosting models--->
 A. InProcess and OutOfProcess hosting
 hen it comes to deployment to IIS, ASP.NET Core offers two hosting models namely InProcess and OutOfProcess. 
