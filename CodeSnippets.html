@@ -37,6 +37,24 @@ To explicitly configure an app for in-process hosting, set the value of the <Asp
 1. In Chrome, visit a URL, right click, select Inspect to open the developer tools.
 2. Select Network tab.
 3. Reload the page, select any HTTP request on the left panel, and the HTTP headers will be displayed on the right panel.
+ Check under the "Response Headers" section and locate where the server is specified e.g 
+Response Headers (see the server at the bottom of the list)
+accept-ranges: bytes
+access-control-allow-credentials: true
+access-control-allow-methods: GET, HEAD
+access-control-allow-origin: https://www.marketwatch.com
+access-control-expose-headers: ETag
+access-control-max-age: 3000
+age: 847457
+cache-control: max-age=2419200
+content-length: 22240
+content-type: application/octet-stream
+date: Tue, 04 Jan 2022 16:03:44 GMT
+etag: "1d26a8581ba4391544992b7e339d90c8"
+last-modified: Mon, 30 Aug 2021 19:16:40 GMT
+server: AmazonS3
+ 
+ 
  (https://mkyong.com/computer-tips/how-to-view-http-headers-in-google-chrome/)
  
 <!---62--Specify the type of error log to display in the output window--->
