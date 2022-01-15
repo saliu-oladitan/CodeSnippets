@@ -1,6 +1,10 @@
 <!---65---[Remote] attribute--->
 
 CREATE A FOREIGN KEY WHEN CREATING A TABLE
+Create table StaffCugNin (
+    Include code for all the columns, then for the Foreign key column create it as shown below
+    AdditionalCug int NOT NULL References dbo.AdditionalCugNin(Cug) 
+);
 
 
 CREATE A FOREIGN KEY ON AN EXISTING TABLE
@@ -8,6 +12,7 @@ Alter table dbo.StaffCugNin
 Add Constraint FK_StaffCugNin_AdditionalCugNin_AdditionalCug
 Foreign Key(AdditionalCug) References dbo.AdditionalCugNin(Cug)   
 
+TO CREATE MULTIPLE FOREIGN KEYS ON A TABLE
 Foreign Key(AdditionalCug, AdditionalPN) References dbo.AdditionalCugNin(Cug,PhoneNo)
 
 
