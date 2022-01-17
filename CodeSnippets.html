@@ -1,3 +1,37 @@
+      
+<!---66---Foreign key - create dropdown--->
+
+ public int AdditionalCug { get; set; }
+[ForeignKey("AdditionalCug")]
+public virtual AdditionalCugNinClass AdditionalCugNinClass { get; set; }
+
+
+
+public IActionResult Create()
+        {
+
+            IEnumerable<SelectListItem> TypeDropDown = _auc.AdditionalCugNin.Select(i => new SelectListItem
+            { 
+                Text = i.Cug,
+                Value = i.Id.ToString()
+            });
+
+            ViewBag.ACDropDown = TypeDropDown;
+
+            return View();
+        }
+                
+ (Remember the definition of the two tables in the DataLayer Class (DbContexts))               
+                
+<div class="input-group">
+<select asp-for="AdditionalCug" asp-items="@ViewBag.ACDropDown" class="input--style-2 form-control" required>
+<option selected>Select Additional CUG</option>
+</select>
+<span asp-validation-for="AdditionalCug" class="text-danger"></span>
+<label asp-for="AdditionalCug"></label>    
+</div>
+                
+               
 <!---65---[Remote] attribute--->
 
 CREATE A FOREIGN KEY WHEN CREATING A TABLE
