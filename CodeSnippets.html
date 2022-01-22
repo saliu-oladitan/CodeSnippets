@@ -1,3 +1,11 @@
+<!---69--- DbContext class utilizing Asp.Net Identity --->
+An example of a DbContext class utilizing Asp.Net Identity.
+
+ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+    {
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
+    }
+
 <!---68--- Identity implementations --->
 
 1. Identity razor class libtrary
