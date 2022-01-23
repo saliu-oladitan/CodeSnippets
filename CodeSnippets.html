@@ -1,3 +1,20 @@
+<!---70--- Use Dependency Injection for ApplicationDbContext and other Identity Management functionalities --->  
+        private readonly ApplicationDbContext _db;
+        UserManager<ApplicationUser> _userManager;
+        SignInManager<ApplicationUser> _signInManager;
+        RoleManager<IdentityRole> _roleManager;
+        
+
+        public AccountController(ApplicationDbContext db, UserManager<ApplicationUser> userManager, 
+            SignInManager<ApplicationUser> signInManager, RoleManager<IdentityRole> roleManager)
+        {
+            _db = db;
+            _userManager = userManager;
+            _roleManager = roleManager;
+            _signInManager = signInManager;
+
+        }
+
 <!---69--- DbContext class utilizing Asp.Net Identity --->
 An example of a DbContext class utilizing Asp.Net Identity.
 
