@@ -1,3 +1,11 @@
+  SELECT * from TestScores
+  where (Score >= 70 OR Name = 'Yuusuf')
+
+  AND Score = 90
+
+Note: SQL Server will execute this first (Score >= 70 OR Name = 'Yuusuf') and then execute this >>>AND Score = 90<<< using
+the result from this (Score >= 70 OR Name = 'Yuusuf').
+
 <!---70--- Use Dependency Injection for ApplicationDbContext and other Identity Management functionalities all in one constructor--->  
         private readonly ApplicationDbContext _db;
         UserManager<ApplicationUser> _userManager;
