@@ -1,3 +1,16 @@
+<!---73--- Round, Ceiling and Floor --->   
+
+DECLARE @value decimal(10,2)
+SET @value = 50.516171
+SELECT ROUND(@value, 2) RoundNumber
+SELECT CEILING(@value) CeilingNumber
+SELECT FLOOR(@value) FloorNumber
+
+Results:
+50.52
+51
+50
+
 <!---72--- Using BETWEEN, NOT, IN --- sql server--->   
 
 SELECT * from TestScores
