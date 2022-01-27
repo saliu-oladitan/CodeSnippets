@@ -1,3 +1,25 @@
+<!---75--- Static and Public Methods --->   
+ class Program
+    {
+        string color;
+        int maxSpeed;
+
+        public void newMethod()
+        {
+            Program objn1 = new Program();
+            objn1.color = "Green";
+            Console.WriteLine(objn1.color);
+        }
+
+        static void Main (string[] arg)
+        {
+            Program objn2 = new Program();
+            //The reason is simple: a static method can be accessed without
+            //creating an object of the class, while public methods can
+            //only be accessed by objects.
+            objn2.newMethod();
+        }
+    }
 
 <!---74--- Trim left and right of a query text --->   
 ...
