@@ -1,3 +1,34 @@
+
+<!---75---Databse First Approach (Asp.net Core)--->   
+
+- Database First Approach: Scaffolding- DbContext
+It generates (Models, DbContext, Add services code, )
+***Create Db and Table(s)
+***Add Connection string to appsettings.js
+***Install these nugget packages:
+- using Microsoft.EntityFrameworkCore.SqlServer
+- using Microsoft.EntityFrameworkCore.tools
+***In Package Manager Control, run the following code:
+
+Scaffold-DbContext {-Connection-string-in-quotations-} Microsoft.EntityFrameWorkCore.SqlServer -outputdir Repository/Models -context {-databasename-}DbContext -contextdir Repository -DataAnnotations -Force
+
+
+OR (for short)
+
+Scaffold-DbContext {-Connection-string-in-quotations-} Microsoft.EntityFrameWorkCore.SqlServer -outputdir Models
+
+
+Notes: 
+1. DataAnnotations -Force >>> helps to create these etc. in the generated Model
+--- [Key]
+[Column("Id")]  etc.
+
+2. To avoid potentially sensitive information in your connection string, you should move it out of source code to e.g. appsettings.js
+How
+Since appsettings.js contains your connection string already, in the generated DbContext, comment the method "OnConfiguring" which also 
+contains your connection string. The scaffolding might also add "defaultConnection" to your appsettings.js.
+
+
 <!---75--- Static and Public Methods --->   
  class Program
     {
