@@ -1,4 +1,15 @@
-<!---80---Assigning default values to parameters in C#--->  
+<!---81---Float data type in C#--->  
+Avoid assigning more than 7 digits to a "float" data type, 
+either before or after the decimal point, count everything together
+and they should not be more than seven digits.
+
+E.g. 87864.56 and 6354332
+
+When you are not sure what the value will be, then use "double" data type,
+it is safer.
+
+
+<!---80---Include code in the usual statement double quotes in C#--->  
 Use this format to include code in the usual statement double quotes.
 
 Console.WriteLine($"Before: {Convert.ToString(123)}");
