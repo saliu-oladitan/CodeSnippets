@@ -1,3 +1,15 @@
+<!---82---ToCharArray(a, b) method with startIndex and lenght--->             
+
+            string myString = "76abcde901";
+            char[] myLetters = myString.ToCharArray(2, 5);
+            Console.WriteLine("The letters in {0} are:", myLetters);
+            int numb = 1;
+            foreach (char i in myLetters)
+            {
+                Console.WriteLine($"{numb}. {i}");
+                 numb++;
+            }
+
 <!---81---Float data type in C#--->  
 Avoid assigning more than 7 digits to a "float" data type, 
 either before or after the decimal point, count everything together
