@@ -1,3 +1,13 @@
+           
+<!---85---TimeSpan --->    
+//TimeSpan is a struct that is used to represent time in
+            //days, hour, minutes, seconds, and milliseconds.
+            DateTime myDateTime = new DateTime(2020,12,31);
+            TimeSpan myTimSpan = new TimeSpan(25,02,02);
+            DateTime myFinalTime = myDateTime.Add(myTimSpan);
+
+            Console.WriteLine(myFinalTime);
+
 <!---84---CopySign() method--->     
 double myNumb = 5.1;
 double result = Math.CopySign(myNumb, -5.44);
