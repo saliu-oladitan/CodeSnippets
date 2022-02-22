@@ -1,3 +1,19 @@
+<!---89--- throws IndexOutOfRange exception--->  
+            int[] arr = new int[5] { 10, 30, 25, 45, 65 };
+            try
+            {
+                Console.WriteLine(arr[0]);
+                Console.WriteLine(arr[1]);
+                Console.WriteLine(arr[2]);
+                Console.WriteLine(arr[3]);
+                Console.WriteLine(arr[4]);
+                Console.WriteLine(arr[5]); // throws IndexOutOfRange exception
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: {0}", ex.Message);
+            }
+
 <!---88--- --->   
             int[] myArray = { 3, 2, 1, 2, 1, 3, 1, 2 };
             Array.Reverse(myArray, 0, myArray.Length);
