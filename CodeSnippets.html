@@ -1,3 +1,11 @@
+      <!---90--- Convert List<> into a string--->    
+
+            List<string> names = new List<string>() { "Ross", "Joey", "Chandler" };
+            string joinedNames = String.Join(", ", names.ToArray());
+            Console.WriteLine(joinedNames);
+
+
+
 <!---89--- throws IndexOutOfRange exception--->  
             int[] arr = new int[5] { 10, 30, 25, 45, 65 };
             try
