@@ -1,4 +1,75 @@
-      <!---90--- Convert List<> into a string--->    
+<!---91--- Understanding DateTime()--->    
+
+DateTime myDateTimeNow = new DateTime(1990,03,04,5,10,20,376); //If time not specified (default: 12:00:00 AM)
+            DateTime myDateTimeNow2 = new DateTime(2002, 02, 07, 3, 12, 38, 413);
+            DateTime myTicksDateTimeNow = new DateTime(345656787688);  //Long value
+            TimeSpan myTimeSpan = new TimeSpan(3, 02, 03);
+            
+
+            Console.WriteLine(myDateTimeNow);
+           /* Console.WriteLine(myDateTimeNow.Add(myDateTimeNow2));*/ 
+           // You can't add two DateTime objs. Error: Cannot convert from System.DateTime into System.TimeSpan
+            Console.WriteLine(myDateTimeNow.Subtract(myDateTimeNow2));
+            Console.WriteLine(myDateTimeNow2 - myDateTimeNow); // If you reverse it, you will get one negative value that has no meaning.
+            Console.WriteLine(myDateTimeNow == myDateTimeNow2);
+            Console.WriteLine(myDateTimeNow != myDateTimeNow2);
+            Console.WriteLine(myDateTimeNow < myDateTimeNow2); //Etc... >, <=, >= etc.
+            Console.WriteLine(myDateTimeNow.AddYears(3));
+            Console.WriteLine(myDateTimeNow.AddMonths(2));
+            Console.WriteLine(myDateTimeNow.AddDays(5));
+            Console.WriteLine(myDateTimeNow.AddHours(4));
+            Console.WriteLine(myDateTimeNow.AddMinutes(26));
+            Console.WriteLine(myDateTimeNow.AddSeconds(46));
+            Console.WriteLine(myDateTimeNow.AddMilliseconds(523));
+            Console.WriteLine(myDateTimeNow.Add(myTimeSpan));
+            Console.WriteLine(myTicksDateTimeNow);
+            Console.WriteLine(myDateTimeNow.AddTicks(345656787688));
+
+
+
+            Console.WriteLine("\n\n\n\n\n");
+
+
+
+
+
+
+            string s = "1/3/2021 05:20:01.124 PM";
+            //DateTime myDate = DateTime.Parse(s);
+            DateTime myDate;
+            bool isValideDateTime = DateTime.TryParse(s, out myDate);
+
+            if (isValideDateTime)
+            {
+                Console.WriteLine(myDate);
+                Console.WriteLine(myDate.Year);
+                Console.WriteLine(myDate.Month);
+                Console.WriteLine(myDate.Day);
+                Console.WriteLine(myDate.TimeOfDay);
+                Console.WriteLine(myDate.Hour);
+                Console.WriteLine(myDate.Minute);
+                Console.WriteLine(myDate.Second);
+                Console.WriteLine(myDate.Millisecond);
+                Console.WriteLine(myDate.ToString("HH:mm:ss.fff"));
+                Console.WriteLine(myDate.ToString("HH:mm:ss"));
+                Console.WriteLine(myDate.ToString("HH:mm"));
+                Console.WriteLine(myDate.ToString("HH"));
+                Console.WriteLine(myDate.ToString("mm"));
+                Console.WriteLine(myDate.ToString("ss"));
+                Console.WriteLine(myDate.ToString("fff"));
+                Console.WriteLine(myDate.ToString("ddd"));
+                Console.WriteLine(myDate.ToString("dddd"));
+                Console.WriteLine(myDate.ToString("t"));
+                Console.WriteLine(myDate.ToString("tt"));
+            }
+
+            else
+            {
+                Console.WriteLine("Not a valid DateTime object.");
+            }
+     
+
+<!---90--- Convert List<> into a string--->    
 
             List<string> names = new List<string>() { "Ross", "Joey", "Chandler" };
             string joinedNames = String.Join(", ", names.ToArray());
