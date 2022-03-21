@@ -10,7 +10,7 @@ DateTime myDateTimeNow = new DateTime(1990,03,04,5,10,20,376); //If time not spe
            /* Console.WriteLine(myDateTimeNow.Add(myDateTimeNow2));*/ 
            // You can't add two DateTime objs. Error: Cannot convert from System.DateTime into System.TimeSpan
             Console.WriteLine(myDateTimeNow.Subtract(myDateTimeNow2));
-            Console.WriteLine(myDateTimeNow2 - myDateTimeNow); // If you reverse it, you will get one negative value that has no meaning.
+            Console.WriteLine(myDateTimeNow2 - myDateTimeNow); // If you substract a larger date from a smaller one, you will get one negative value that has no meaning.
             Console.WriteLine(myDateTimeNow == myDateTimeNow2);
             Console.WriteLine(myDateTimeNow != myDateTimeNow2);
             Console.WriteLine(myDateTimeNow < myDateTimeNow2); //Etc... >, <=, >= etc.
