@@ -1,3 +1,15 @@
+<!---92--- C# Coding Questions and Solutions--->   
+QUESTION
+E.g Genrate 5 random positive integers between 0 and 10 and limit the fractional part to 3.
+Random rnd = new Random();
+
+for (int j = 0; j < 5; j++)
+{
+    Console.WriteLine(rnd.Next(11).ToString("N3"));
+}
+
+
+
 <!---91--- Understanding DateTime() in C#--->    
 
 DateTime myDateTimeNow = new DateTime(1990,03,04,5,10,20,376); //If time not specified (default: 12:00:00 AM)
