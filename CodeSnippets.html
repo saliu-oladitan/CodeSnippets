@@ -1,3 +1,16 @@
+<!---94--- GUID/UUID---> 
+Explanation: GUID (aka UUID) is an acronym for 'Globally Unique Identifier' (or 'Universally Unique Identifier'). 
+It is a 128-bit integer number used to identify resources. The term GUID is generally used by developers working 
+with Microsoft technologies, while UUID is used everywhere else.
+
+Free Online GUID Generatorhttps://www.guidgenerator.com
+            _posts = new List<Post>();
+            for (var i = 0; i < 5; i++)
+            {
+                _posts.Add(new Post { Id = Guid.NewGuid().ToString() });
+            }
+
+
 <!---93--- Add Swagger to an ASP.NET core REST API project--->   
 In startup.cs
 app.UseSwagger();
