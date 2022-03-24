@@ -1,3 +1,19 @@
+<!---95--- API Post methood with a response definition--->        
+[HttpPost(ApiRoutes.Posts.Create)]
+        public async Task<IActionResult> Create([FromBody] CreatePostRequest postRequest)
+        {
+            var post = new Post { Name = postRequest.Name };
+
+            await _postService.CreatePostAsync(post);
+
+            var baseUrl = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host.ToUriComponent()}";
+            var locationUri = baseUrl + "/" + ApiRoutes.Posts.Get.Replace("{postId}", post.Id.ToString());
+
+            var response = new PostResponse { Id = post.Id };
+
+            return Created(locationUri, response);
+        }
+
 <!---94--- GUID/UUID---> 
 Explanation: GUID (aka UUID) is an acronym for 'Globally Unique Identifier' (or 'Universally Unique Identifier'). 
 It is a 128-bit integer number used to identify resources. The term GUID is generally used by developers working 
