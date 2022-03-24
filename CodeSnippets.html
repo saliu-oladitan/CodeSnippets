@@ -32,6 +32,54 @@ for (int j = 0; j < 5; j++)
 }
 
 
+                      
+QUESTION 
+Check if a pin is valid or not.
+Validity Criteria
+1. The pin must contain only digits
+2. The pin must contain 4 or 6 digits
+3. The pin must not contain a duplicate digit
+
+
+string ATMPIN = "3252";
+
+long pinLenght = ATMPIN.Length;
+bool isOnlyDigits = ATMPIN.All(Char.IsDigit);
+
+char[] uniqueValues = ATMPIN.Distinct().ToArray();
+
+long uniqueLenght = uniqueValues.Length;
+
+if (pinLenght == 4 || pinLenght == 6)
+{
+    if (isOnlyDigits)
+    {
+        if (pinLenght == uniqueLenght)
+        {
+            Console.WriteLine("The ATM PIN is valid");
+        }
+        else
+        {
+            Console.WriteLine("The ATM PIN is invalid");
+
+        }
+    }
+
+    else
+    {
+        Console.WriteLine("The ATM PIN is invalid");
+    }
+
+
+}
+
+else
+{
+    Console.WriteLine("The ATM PIN is invalid");
+}
+     
+                      
+                      
 
 <!---91--- Understanding DateTime() in C#--->    
 
