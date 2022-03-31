@@ -1,7 +1,15 @@
+
+
 <!---99--- Add client side validation - ASP.Net Core---> 
 @section Scripts{
     <partial name="_ValidationScriptsPartial" />
 }
+
+Display all
+<div asp-validation-summary="All" class="text-danger"></div>
+
+Individual
+<span asp-validation-for="Surname" class="text-danger"></span>
 
 <!---98--- Use JWT (Token)---> 
 bearer  key...
