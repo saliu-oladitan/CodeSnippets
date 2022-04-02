@@ -1,6 +1,7 @@
 <!---100--- Assign a string to a session---> 
 var user = await _userManager.FindByNameAsync(model.Email); //Get the detail of the current user using the Email and 
-HttpContext.Session.SetString("ssUserName", user.Surname + " " + user.FirstName);  //Retrieve the Surname and the First Name
+HttpContext.Session.SetString("ssUserName", user.Surname + " " + user.FirstName);  //Get the Surname and the First Name
+var userName = HttpContext.Session.GetString("ssUserName") //To retrieve the session in a controller
 
 >>> SetString(string key, string value) or setInt32(string key, int value)
 
