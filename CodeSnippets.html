@@ -7,8 +7,9 @@ var userName = HttpContext.Session.GetString("ssUserName") //To retrieve the ses
 
 
 <!---100--- Autorization---> 
-The magic word is: [Authorize] either at the globsl or individual level.
-Then you can customize for eaxh situation as required.
+The magic word is: [Authorize] either at the global or individual level.
+[Authorize(Roles = Helper.SuperAdmin)] >>>Specify the authorized role at global level
+Then you can customize for each situation as required.
 
 
 
