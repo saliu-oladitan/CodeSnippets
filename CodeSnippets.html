@@ -1,9 +1,48 @@
-<!---101--- Assign a string to a session---> 
+<!---102--- Assign a string to a session---> 
 var user = await _userManager.FindByNameAsync(model.Email); //Get the detail of the current user using the Email and 
 HttpContext.Session.SetString("ssUserName", user.Surname + " " + user.FirstName);  //Get the Surname and the First Name
 var userName = HttpContext.Session.GetString("ssUserName") //To retrieve the session in a controller
 
 >>> SetString(string key, string value) or setInt32(string key, int value)
+
+
+<!---101--- Check if any user is signed in, retrieve the session stored value and check the current user's role---> 
+@inject Microsoft.AspNetCore.Identity.SignInManager<ProjectsTracker.Models.ApplicationUser> signInManager
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+
+
+@if (signInManager.IsSignedIn(User))
+{
+    <form method="post" id="logoutForm" asp-action="Logoff" asp-controller="Account">
+        <ul class="nav navbar-nav">
+            @*<li>Hello, @User.Identity.Name! </li>*@
+            <li>Hello, @HttpContextAccessor.HttpContext.Session.GetString("ssUserName")! &nbsp; ||</li>
+            <li><a class="nav-link" href="javascript:document.getElementById('logoutForm').submit()">&nbsp; Log off &nbsp; </a></li>
+            @if (User.IsInRole(ProjectsTracker.Utility.Helper.SuperAdmin))
+            {
+                <li> <a class="nav-link text-black" id="registerLink" asp-controller="Account" asp-action="Register">|| &nbsp; <b>Register a new User</b> </a></li>
+            }
+
+            else
+            {
+               
+            }
+
+
+        </ul>
+    </form>
+}
+else
+{
+    <a class="nav-link text-black-50" id="registerLink" asp-controller="Account" asp-action="Register">Register</a><a class="nav-link text-black-50" id="registerLink" asp-controller="Account" asp-action="Login">Log in</a>
+}
+
+
+
+
+
+
 
 
 <!---100--- Autorization---> 
