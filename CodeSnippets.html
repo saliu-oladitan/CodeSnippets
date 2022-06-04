@@ -1,3 +1,25 @@
+<!---107--- SET NOCOUNT ON---> 
+SET NOCOUNT ON is a set statement which prevents the message which shows the number of rows affected by T-SQL query statements. 
+This is used within stored procedures and triggers to avoid showing the affected rows message.
+
+E.g. 
+CREATE PROCEDURE AddUser
+    @name varchar(50),
+    @pwd varchar(50),
+    @type varchar(10)
+AS
+BEGIN
+
+    SET NOCOUNT ON;
+
+    insert into user_tab (U_name,U_pwd,U_type)
+    values(@name,@pwd,@type)
+
+END
+GO
+
+
+
 <!---106--- To insert data in an existing table with an Identity column---> 
  set identity_insert person off;
  insert into person(first_name,last_name)
