@@ -1,3 +1,12 @@
+
+<!---109---Unable to cast object of type 'System.Int64' to type 'System.Int32'-->
+If for any reason, you are using "bigint" as your data type in SQL Server for your identity column and 
+you receive this error "Unable to cast object of type 'System.Int64' to type 'System.Int32" while trying 
+to POST data to the data, one of the easiest solutions is to change the "bigint" to "int".
+
+
+
+
 <!---108---CHANGE MASTER TO MAIN AND VICE VERSA---> 
 In "Git CMD", run >>>
 git config --global init.defaultBranch main 
