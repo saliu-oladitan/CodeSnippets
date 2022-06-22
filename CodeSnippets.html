@@ -1,3 +1,15 @@
+<!---111---SQL Server - get all databases with MDF and LDF File Location-->
+
+SELECT
+    db.name AS DBName,
+    type_desc AS FileType,
+    Physical_Name AS Location
+FROM
+    sys.master_files mf
+INNER JOIN 
+    sys.databases db ON db.database_id = mf.database_id
+
+
 <!---110---Unable to install Serilog.AspNetCore in .Net6 Web API in VS2022-->
 If you get this error:
 "unable to install serilog Severity Code Description Project File Line Suppression State Error User canceled out of save dialog (Exception from HRESULT: 0x8004000C (OLE_E_PROMPTSAVECANCELLED))"
