@@ -1,3 +1,14 @@
+<!---113---Resolving the warning: [WRN] No store type was specified for the decimal property 'AMOUNT' on entity type 'XXXX'...--->
+
+[WRN] No store type was specified for the decimal property 'AMOUNT' on entity type 'XXXX'. 
+This will cause values to be silently truncated if they do not fit in the default precision and scale. 
+Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' 
+using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter 
+using 'HasConversion'.
+
+[Column(TypeName = "decimal(18,2)")]
+Just add this to the top of the decimal field in your model.
+
 <!---112---SQL Server connection strings--->
 https://www.connectionstrings.com/sql-server-2005/
 
