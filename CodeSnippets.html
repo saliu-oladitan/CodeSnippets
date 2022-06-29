@@ -1,3 +1,8 @@
+<!---115---Concatenate the result of a query and separate them with a character "|"--->
+Select Column_Name + '|' FROM TableName  where Column_Name = 'value' FOR XML PATH('') 
+
+
+
 <!---114---Set and drop a Constraint--->
 Set a Constraint
 ALTER TABLE tableName ADD CONSTRAINT DF_NameTheConstraint DEFAULT N'SPECIFY_DEFAULT_VALUE' FOR SPECIFY_COLUMN;
