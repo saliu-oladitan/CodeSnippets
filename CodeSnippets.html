@@ -1,3 +1,9 @@
+<!---117---CREATE A VIEW WITH COUNTED COLUMNS-----------> 
+CREATE VIEW Current_Status_Counts AS
+SELECT Current_Status, count(Current_Status) AS COUNTS
+  FROM Current_Status 
+ GROUP by Current_Status
+
 <!---116---Find the difference between two dates in SQL SERVER in terms of days, months etc--->
 DATEDIFF(day, DATE1, DATE2)
 
@@ -1314,6 +1320,8 @@ if (!isDuplicate) {
 return View(query.OrderByDescending(x => x.AWBNO).ThenByDescending(x => x.DATE).ToList());
 
 
+    
+    
 <!---44---AN EASY WAY TO USE MARQUEE-----------> 
 <marquee bgcolor="#000080" style="color: #FFFFFF; font-family: Book Antiqua" behavior="alternate" > <h3> Hello World</h3></marquee>
 
