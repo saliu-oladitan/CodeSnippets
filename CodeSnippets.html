@@ -1,3 +1,23 @@
+<!---117---Note the following in your program.cs-----------> 
+
+THIS WILL THROW AN ERROR BECAUSE THE "//Add services for the DbContext" must come before the program buids
+
+var app = builder.Build();
+
+//Add services for the DbContext
+builder.Services.AddDbContext<TurnoverUIDbContext>(options =>
+options.UseSqlServer(builder.Configuration.GetConnectionString("TurnoverCovenantDbConnectionString")));
+
+  
+THE CORRECT WAY
+//Add services for the DbContext
+builder.Services.AddDbContext<TurnoverUIDbContext>(options =>
+options.UseSqlServer(builder.Configuration.GetConnectionString("TurnoverCovenantDbConnectionString")));
+
+var app = builder.Build();
+
+
+
 <!---117---CREATE A VIEW WITH COUNTED COLUMNS-----------> 
 CREATE VIEW Current_Status_Counts AS
 SELECT Current_Status, count(Current_Status) AS COUNTS
