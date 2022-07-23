@@ -1,4 +1,27 @@
- <!---118---How to Use Comma as Thousand Separator in JavaScript-----------> 
+<!---119---Note the following when writing C# code in .cshtml file and when declaring a variables.>
+
+                       @{
+                            var getOperationDateTime = item.INITIATION_DATE;
+                        }
+                        @{var getOperationDate = getOperationDateTime.ToString().Split(" ")[0];}                
+            <td>@getOperationDate</td>
+            <td>
+                @Html.DisplayFor(modelItem => item.INITIATION_TIME)
+            </td>
+            @switch (item.APPROVAL_STATUS)
+                {
+                    case 0:
+                       <td class="text-warning">PENDING</td>
+                        break;
+                    case 13:
+                        <td class="text-success">APPROVED</td>
+                        break;
+                    case 14:
+                        <td class="text-danger">REJECTED</td>
+                        break;
+                }
+
+<!---118---How to Use Comma as Thousand Separator in JavaScript-----------> 
     const totalCreditsValue = 12050000;
     const totalCreditsValueWithCommas = totalCreditsValue.toLocaleString('en-US');
 
