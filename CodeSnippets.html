@@ -1453,8 +1453,11 @@ INSTALL NUGET PACKAGE
 Microsoft.ASPNETCore.MVC.Razor.RuntimeCompilation
 
 ADD TO SERVICE
+  IF you have the startup.cs
 services.AddControllersWithViews().AddRazorRuntimeCompilation();
 
+  OR this for new project without the startup.cs
+    builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
 
 <!---39---Connection Strings Asp.Net----------->
 
