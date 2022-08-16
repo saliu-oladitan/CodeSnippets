@@ -1,3 +1,32 @@
+<!--123--So my question is how to create 2 DbSets with same generic type, in DbContext class.---->
+
+You have to use a base class that is not used as a DbSet and inherit from that in the classes you will use as a DbSet.
+
+If you use an inherited class - e.g. FlightBase in the below example - in a DbSet, tables for Flight and ArchiveFlight will not be generated.
+
+Classes
+
+public class FlightBase
+{
+    // code
+}
+
+public class Flight : FlightBase { }
+
+public class ArchiveFlight : FlightBase { }
+DbContext
+
+public class FlightsDatabase : DbContext
+{
+    public DbSet<Flight> Flights { get; set; }
+    public DbSet<ArchiveFlight> ArchiveFlights { get; set; }
+    public DbSet<Passanger> Passengers { get; set; }
+}
+
+      Source: https://stackoverflow.com/questions/38640279/how-to-create-2-dbsets-with-the-same-type-in-entity-framework-code-first
+      
+      
+      
 <!--122--Make a page refresh after every specified period---->
 
 With this example, the page refreshes after 20 seconds
