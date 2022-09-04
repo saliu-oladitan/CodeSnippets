@@ -1,3 +1,24 @@
+128. TRUNCATE a TABLE
+
+Best way to clear a table is with TRUNCATE.
+
+Since you are creating and droping ill assume you have no constraints.
+
+TRUNCATE TABLE <target table>
+Some advantages:
+
+Less transaction log space is used.
+The DELETE statement removes rows one at a time and records an entry in the transaction log for each deleted row. TRUNCATE TABLE removes the data by deallocating the data pages used to store the table data and records only the page deallocations in the transaction log.
+
+Fewer locks are typically used.
+When the DELETE statement is executed using a row lock, each row in the table is locked for deletion. TRUNCATE TABLE always locks the table (including a schema (SCH-M) lock) and page but not each row.
+
+Without exception, zero pages are left in the table.
+After a DELETE statement is executed, the table can still contain empty pages. For example, empty pages in a heap cannot be deallocated without at least an exclusive (LCK_M_X) table lock. If the delete operation does not use a table lock, the table (heap) will contain many empty pages. For indexes, the delete operation can leave empty pages behind, although these pages will be deallocated quickly by a background cleanup process.
+    
+Source: https://stackoverflow.com/questions/31387653/what-is-the-fastest-way-to-clear-a-sql-table
+    
+    
 127. Get only the Date part of a DateTime value in SQL SERVER
 CAST( EntryDateTime AS Date ) >>> Get the Date part of EntryDateTime
 CAST( GETDATE() AS Date ) >>> Get the Date part of Today's DateTime
