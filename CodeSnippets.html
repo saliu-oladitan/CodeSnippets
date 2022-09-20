@@ -1,3 +1,10 @@
+135. AsNoTracking() 
+AsNoTracking() allows the "unique key per record" requirement in EF to be bypassed (not mentioned explicitly by other answers). 
+This is extremely helpful when reading a View that does not support a unique key because perhaps some fields are nullable or 
+the nature of the view is not logically indexable.
+
+
+
 134. View the operations of events on Windows
 Event Viewer
 
