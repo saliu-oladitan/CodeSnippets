@@ -1,3 +1,8 @@
+137. Wait for a void async method
+
+Best practice is to mark function async void only if it is fire and forget method, if you want to await on, you should mark it as async Task.
+Source: https://stackoverflow.com/questions/13636648/wait-for-a-void-async-method
+
 136. Windows Service Launch Template
 New-Service -Name {SERVICE NAME} -BinaryPathName {EXE FILE PATH} -Description "{DESCRIPTION}" -DisplayName "{DISPLAY NAME}" -StartupType Automatic
 
