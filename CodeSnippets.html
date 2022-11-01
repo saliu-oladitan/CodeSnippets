@@ -1,3 +1,32 @@
+138. More on async and await
+
+async methods are different than normal methods. Whatever you return from async methods are wrapped in a Task.
+
+If you return no value(void) it will be wrapped in Task, If you return int it will be wrapped in Task<int> and so on.
+
+If your async method needs to return int you'd mark the return type of the method as Task<int> and you'll return plain int not the Task<int>. Compiler will convert the int to Task<int> for you.
+
+private async Task<int> MethodName()
+{
+    await SomethingAsync();
+    return 42;//Note we return int not Task<int> and that compiles
+}
+Sameway, When you return Task<object> your method's return type should be Task<Task<object>>
+
+public async Task<Task<object>> MethodName()
+{
+     return Task.FromResult<object>(null);//This will compile
+}
+Since your method is returning Task, it shouldn't return any value. Otherwise it won't compile.
+
+public async Task MethodName()
+{
+     return;//This should work but return is redundant and also method is useless.
+}
+Keep in mind that async method without an await statement is not async.
+
+Source: https://stackoverflow.com/questions/25191512/async-await-return-task
+
 137. Wait for a void async method
 
 Best practice is to mark function async void only if it is fire and forget method, if you want to await on, you should mark it as async Task.
