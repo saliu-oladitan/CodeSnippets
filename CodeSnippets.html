@@ -1,3 +1,15 @@
+140. *** Orale>>> ORA-00911: invalid character error
+Apart from other reasons, yuou can encounter an issue if you are using sth like this in a query item.OriginatorAcct.
+Instead, do this:
+var originatorAcct = item.OriginatorAcct
+then use the variable originatorAcct in the query.
+
+139. ***SQL SERVER>>> There is already an open DataReader associated with this Connection which must be closed first. 
+
+This issue can occur if you don't use await to save the changes
+ 
+
+
 138. More on async and await
 
 async methods are different than normal methods. Whatever you return from async methods are wrapped in a Task.
