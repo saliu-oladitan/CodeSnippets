@@ -1,3 +1,30 @@
+141. 
+
+If you are accessing Oracle DB from your ASP.Net Core Web API, and you notice these errors:
+Inner Exception 1:
+TypeInitializationException: The type initializer for 'OracleInternal.ServiceObjects.OracleConnectionImpl' threw an exception.
+
+Inner Exception 2:
+TypeInitializationException: The type initializer for 'Oracle.ManagedDataAccess.Types.TimeStamp' threw an exception.
+
+Inner Exception 3:
+NotSupportedException: BinaryFormatter serialization and deserialization are disabled within this application. See https://aka.ms/binaryformatter for more information.
+
+
+Do what is suggested below:
+
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <EnableUnsafeBinaryFormatterSerialization>true</EnableUnsafeBinaryFormatterSerialization>      //Add this line
+    <!--<Nullable>enable</Nullable>-->
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+
+
+Source: https://stackoverflow.com/questions/64790197/odp-net-driver-throwing-exception-on-net-core-5-0
+
 140. *** Orale>>> ORA-00911: invalid character error
 Apart from other reasons, yuou can encounter an issue if you are using sth like this in a query item.OriginatorAcct.
 Instead, do this:
