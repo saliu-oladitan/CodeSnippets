@@ -11,8 +11,7 @@ Inner Exception 3:
 NotSupportedException: BinaryFormatter serialization and deserialization are disabled within this application. See https://aka.ms/binaryformatter for more information.
 
 
-Do what is suggested below:
-
+In your project file, you can add the XML statement to EnableUnsafeBinaryFormatterSerialization as demonstrated below:
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
